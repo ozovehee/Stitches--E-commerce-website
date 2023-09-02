@@ -1,0 +1,423 @@
+body{
+    padding: 1rem 3rem;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color:#25313C ;
+    background-color: #e9e4cd;
+    box-sizing: border-box;
+    width: 100%;
+    overflow-x: hidden;
+    
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 3rem;
+}
+
+.navLinks-1 a,.navLinks-2 a{
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1rem;
+color: #25313C;
+}
+
+.logo{
+    height: 20px;
+}
+
+.hero-section{
+    width: 100%;
+}
+
+.hero-content{
+    height: 30rem;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    background-image: url('images stitches/hero image.png');
+    background-size: cover;
+    background-position: center;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-text{
+    color: white;
+    font-size: 2.4rem;
+    max-width: 440px;
+    text-align: center;
+}
+
+.hero-button{
+    padding: 0.5rem;
+    color:#25313C ;
+    font-size: 1.2rem;
+    background-color:white;
+    border-radius: 10px;
+    border: none;
+    font-size: bold;
+}
+
+.hero-arrow{
+    height: 50%;
+}
+
+.text{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+    margin-bottom: -35px;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.category-heading{
+    font-size: 2rem;
+}
+
+.line::before {
+    content: '';
+    display: inline-block;
+    width: 100%;
+    border-top: 0.15rem solid #25313C ;
+}
+
+.section-arrow{
+height: 3vh;
+padding-left: 6px;
+}
+
+.category-section{
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 3rem;
+}
+
+.category-item{
+    display: grid;
+    height: 500px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+    gap: 10px;
+  //background-color: grey;
+grid-template-rows: 1fr 1fr;
+grid-template-columns: .25fr 1fr .7fr 1fr;
+grid-template-areas: 'a a b d'
+'a a c d';
+border-radius: 10px;
+}
+
+.item-1 {
+grid-area:a ;
+    border-radius: 10px;
+    background-image: url('images stitches/category 1.jpg');background-position: center;
+    background-size: cover;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+    padding: 1.5em;
+    color: white;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.item-2 {
+   grid-area:b ;
+    //background-color: #ffa08c;
+    border-radius: 10px;
+    background-image: url('images stitches/category 2.jpg') ;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    padding: 1em;
+    display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    
+}
+
+.item-3{
+    background-image: url('images stitches/category 3.jpg');
+    background-position: center;
+    background-size: cover;
+    grid-area: c;
+        background-color: #ffff64;
+        border-radius: 10px;
+        background-repeat: no-repeat;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        padding: 1em;
+        display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+}
+
+.item-4{
+grid-area: d;
+    background-color: aqua;
+    border-radius: 10px;
+    background-image: url('images stitches/category 4.jpg');
+        background-position: center;
+        background-size: cover;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        padding: 1.5em;
+        display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+}
+
+.category-arrow{
+    height: 3vh;
+}
+
+.category-button1{
+    padding: 0.6em;
+    width: 120px;
+    display: inline;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    color: #25313C;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: -15px;
+
+}
+
+.category-button2 {
+    padding: 0.5em;
+    width: 120px;
+    display: inline-block;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    color: #25313C;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: -20px;
+
+}
+
+.category-button3 {
+    padding: 0.5em;
+    width: 110px;
+    display: inline-block;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    color: #25313C;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: -20px;
+
+}
+
+.category-button4 {
+    padding: 0.6em;
+    width: 120px;
+    display: inline-block;
+    border: none;
+    background-color: white;
+    border-radius: 10px;
+    color: #25313C;
+    font-size: 1em;
+    font-weight: 500;
+    margin-top: -15px;
+
+}
+.item-text{
+    font-size: 30px;
+    font-weight: 600;
+    color: white;
+}
+
+.sale-section{
+    background-color:#E59A74;
+    height: 300px ;
+    width: 80%;
+    margin: 6rem auto;
+    border-radius: 10px;
+    display: flex;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.image-sale{
+    background-color: #ffff64;
+    width: 50%;
+    background-image: url('images stitches/sale\ image.jpg');
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.textSale-buttton{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textSale-buttton p {
+    color: white;
+    font-size: 1.8rem;
+    padding: 1rem;
+    width: 70%;
+    text-align: center;
+    font-weight: bold;
+    
+}
+
+.textSale-buttton button{
+    padding: 10px 20px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    color: #25313C;
+    font-size: 1rem  ;
+}
+
+.new-release{
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.product-items{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.product{
+    height: 400px;
+    width: 20rem;
+    margin-top: 3rem;
+   
+}
+.product-image{
+    height: 300px;
+    border-radius: 15px;
+    
+}
+
+.price-button{
+    display: flex;
+    justify-content: space-between;
+}
+.price-button button{
+    background-color:#25313C;
+    border: none;
+    display: block;
+padding: 4px 8px;
+border-radius: 5px;
+font-weight: bolder;
+font-size: 1rem;
+align-self: self-end;
+margin-top: 10px;
+color: white;
+transition:0.1s ease-in-out;
+
+}
+
+.price-button button:hover{
+    background-color: #25313cda;
+}
+ .price{
+    font-size: 1.1em;
+ }
+
+ .best-seller{
+    margin-top: 6rem ;
+ }
+
+ .shop-leisure{
+    background-color: #E59A74;
+        height: 320px;
+        width: 80%;
+        margin: 8rem auto;
+        border-radius: 10px;
+        display: flex;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+        position: relative;
+        margin-bottom: 6rem;
+ }
+
+ .image-1{
+    width: 50%;
+    
+    border-radius: 10px 0 0 10px;
+    background-image:url('images stitches/shop-leisure\ 1.jpg');
+    background-position: center;
+    background-size: cover;
+ }
+
+ .image-2{
+    width: 50%;
+   
+    background-image: url('images stitches/shop-leisure\ 2.jpg');
+        background-position: center;
+        background-size: cover;
+    border-radius: 0px 10px 10px 0px ;
+ }
+
+ .sl-button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 15px 30px;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        color: #25313C;
+        font-size: 1.2rem;
+ }
+
+
+ .news-letters{
+    margin: 2rem auto;
+    text-align: center;
+    width: 80%;
+    height: 100px;
+ }
+
+ .big-text{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.5rem;
+    width: 60%;
+    margin: 10px auto;
+ }
+
+.small-text{
+    margin:0 auto ;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+}
+
+.input-button input {
+    margin: 0 ;
+    width: 250px;
+    padding: 0.6rem;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.input-button button {
+    margin-left: -4px;
+    width: 80px;
+    background-color: #E59A74;
+    color: white;
+    font-weight: bold;
+    padding: 0.6rem;
+    border-radius: 0 5px 5px 0;
+    border: none;
+      box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
