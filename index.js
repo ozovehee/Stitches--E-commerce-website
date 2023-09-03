@@ -1,26 +1,78 @@
 var addToCartBtns = document.getElementsByClassName('add-to-cart')
 
- for ( var i = 0 ; i < addToCartBtns.length; i++){
- var button = addToCartBtns[i]
- button.addEventListener('click',addToCartClicked )
- }
+// listen for the add button being clicked.
+for ( var i = 0 ; i < addToCartBtns.length; i++){
+  var button = addToCartBtns[i]
+  button.addEventListener('click', addToCartClicked)
+}
 
+// handle the clicking event
 function addToCartClicked(event){
+  // get product info
   var button = event.target
   var shopItem = button.parentElement.parentElement.parentElement
   var productName = shopItem.getElementsByClassName('product-name')[0].innerText
   var price = shopItem.getElementsByClassName ('price')[0].innerText
   var imageSrc= shopItem.getElementsByClassName('product-image')[0].src
-
+  // pass the info to the relevant function.
   addItemToCart(productName,price,imageSrc)
 }
 
-function addItemToCart (productName,price,imageSrc) {
+function addItemToCart2 (productName,price,imageSrc) {
   var cartRow = document.createElement('div')
   cartRow.innerText = productName
   var cartItems = document.getElementsByClassName('cart-items')
   cartItems.append(cartRow)
 
+}
+
+function addItemToCart(productName, price, imageSrc) {
+  // first, update cart counter at the top of the page
+  var cartCounter = document.getElementById("cart-counter")
+  var count = Number(cartCounter.innerHTML)
+  cartCounter.innerHTML = count + 1
+
+  // second, update the cart items count in session storage
+  // 1. check if the item is already in cart
+  var productInCart = localStorage.getItem(productName)
+
+  // if product exists in cart, increase the count
+  if (productInCart) {
+    const productCountString = `${productName}-count`
+    const productCount = Number(localStorage.getItem(productCountString)) + 1
+    localStorage.setItem(productCountString, productCount)
+    console.log(`${productName} has been added to cart. Current count: ${productCount}`)
+  } 
+  else { // else add product info to storage
+    console.log(`${productName} is being added to cart`)
+    localStorage.setItem(productName, true)
+    localStorage.setItem(`${productName}-count`, 1)
+    localStorage.setItem(`${productName}-price`, Number(price))
+    localStorage.setItem(`${productName}-image-src`, imageSrc)
+  }
+}
+
+function showCartItems() {
+  const allProducts = [
+    "White baseball hat",
+    "Blue shorts",
+    "white top",
+    "Nude long sleeve top",
+    "Baseball cap",
+    "White T-shirt"
+  ]
+  for (let i = 0; i < allProducts.length; i++) {
+    const product = allProducts[i]
+    if (localStorage.getItem(product)) {
+      const count = localStorage.getItem(`${product}-count`)
+      console.log(`Product <${product}> has ${count} items in cart`)
+    } else {
+      console.log(`Product <${product}> is not in cart`)
+
+    }
+  }
+
+  localStorage.clear()
 }
 
 
