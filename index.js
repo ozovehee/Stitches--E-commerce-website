@@ -47,7 +47,7 @@ function addItemToCart(productName, price, imageSrc) {
     console.log(`${productName} is being added to cart`)
     localStorage.setItem(productName, true)
     localStorage.setItem(`${productName}-count`, 1)
-    localStorage.setItem(`${productName}-price`, Number(price))
+    localStorage.setItem(`${productName}-price`, Number(price.replace("$", "")))
     localStorage.setItem(`${productName}-image-src`, imageSrc)
   }
 }
@@ -62,16 +62,36 @@ function showCartItems() {
     "White T-shirt"
   ]
   for (let i = 0; i < allProducts.length; i++) {
-    const product = allProducts[i]
-    if (localStorage.getItem(product)) {
-      const count = localStorage.getItem(`${product}-count`)
-      console.log(`Product <${product}> has ${count} items in cart`)
-    } else {
-      console.log(`Product <${product}> is not in cart`)
+    const pName = allProducts[i]
+    if (localStorage.getItem(pName)) {
+      const pCount = localStorage.getItem(`${pName}-count`)
+      const pPrice = localStorage.getItem(`${pName}-price`)
+      const pSrc = localStorage.getItem(`${pName}-image-src`)
+      console.log(`SRC of <${pName}> is: ${pSrc}`)
+      const cost = pPrice * pCount
+      console.log(`Product <${pName}> has ${pCount} items in cart`)
+      productsEl = document.getElementsByClassName("cart-items")[0]
+      productsEl.innerHTML += `
+      <div class="item">
+      <div>
+          <img src="${pSrc}" alt="" class="image-cart" >
+      </div>
 
+      <div class="product_name-cart">
+          ${pName}
+      </div>
+
+      <div><input type="number" class="quantity" value="${pCount}"></div>
+
+      <div class="price-cart">$${cost}</div>
+
+      <div><button class="remove-cart">X</button></div>
+      </div>
+        `;
+    } else {
+      console.log(`Product <${pName}> is not in cart`)
     }
   }
-
   localStorage.clear()
 }
 
