@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="shopping_cart.css">
     <title>Document</title>
 </head>
-<body onload="showCartItems()">
+<body onload="showCartItems()"> <!-- The showCartItems function is called immediately this page is loaded (and ONLY when this page is loaded) -->
      <nav>
 
         <div><a href="index.html"><img src="images stitches/STITCHES.png" alt="" srcset=""class="logo" ></a></div>
@@ -30,44 +30,13 @@
         <div class="title">Shopping Cart</div>
 
         <div class="cart-items">
-            <div class="item">
-                <div>
-                    <img src="images stitches/sale image.jpg" alt="" class="image-cart" >
-                </div>
-
-                <div class="product_name-cart">
-                    White T-shirt
-                </div>
-
-                <div ><input type="number"class="quantity" ></div>
-
-                <div class="price-cart">$50</div>
-
-                <div><button class="remove-cart">X</button></div>
-            </div>
-
-
-            <div class="item">
-                <div >
-                    <img src="images stitches/sale image.jpg" alt="" class="image-cart" >
-                </div>
-
-                <div class="product_name-cart">
-                    White T-shirt
-                </div>
-
-                <div ><input type="number"class="quantity" ></div>
-
-                <div class="price-cart">$50</div>
-
-                <div><button class="remove-cart">X</button></div>
-            </div> 
+            <!-- we will render the cart items here -->
         </div>
 
     
         <div class="subtotal-price">
             <div class="total">Total :</div>
-            <div class="total-price">$100</div>
+            <div class="total-price">$0</div>
         </div>
 
     </div>
